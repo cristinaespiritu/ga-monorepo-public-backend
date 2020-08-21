@@ -54,8 +54,10 @@ jobs:
         steps:
         - name: checkout the repo
           uses: actions/checkout@v2
-        - name: change working directory to service1
-          run: cd services/service1
+        - name: determine pwd
+          uses: echo $pwd
+        # - name: change working directory to service1
+        #   run: cd services/service1
         - name: build and push to docker hub
           uses: docker/build-push-action@v1
           with:
