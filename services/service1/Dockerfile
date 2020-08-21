@@ -5,5 +5,5 @@ WORKDIR /app
 COPY . .
 RUN pwd
 RUN ls -alrt
-RUN go build -o main .
+RUN go build -i services/service1/main.go .
 CMD ["/app/main"]
