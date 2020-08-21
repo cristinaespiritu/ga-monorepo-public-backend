@@ -1,8 +1,5 @@
 name: service1
 
-env:
-    SERVICE_PATH: services/service1
-
 on:
     push:
         paths:
@@ -15,7 +12,7 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: build
-          run: go build -i -v $SERVICE_PATH/main.go
+          run: go build -i -v services/service1/main.go
 
     lint:
         runs-on: ubuntu-latest
@@ -60,7 +57,7 @@ jobs:
         - name: build and push to docker hub
           uses: docker/build-push-action@v1
           with:
-            path: $SERVICE_PATH
+            path: services/service1
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
             repository: cristinaespiritu/pocpublic
