@@ -55,7 +55,7 @@ jobs:
         - name: checkout the repo
           uses: actions/checkout@v2
         
-        docker build and push - manual
+        #docker build and push - manual
         - name : build and push docker image for service1
           run: |
             docker build -f services/service1/Dockerfile .
