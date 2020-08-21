@@ -79,11 +79,6 @@ linters-settings:
   golint:
     # minimal confidence for issues, default is 0.8
     min-confidence: 0.8
-  gomnd:
-    settings:
-      mnd:
-        # the list of enabled checks, see https://github.com/tommy-muehle/go-mnd/#checks for description.
-        checks: argument,case,condition,operation,return,assign
   govet:
     # report about shadowed variables
     check-shadowing: true
@@ -187,11 +182,8 @@ linters:
     - gocritic
     - gocyclo
     - gofmt
-    - goimports
     - golint
-    - gomnd
     - goprintffuncname
-    - gosec
     - gosimple
     - govet
     - ineffassign
