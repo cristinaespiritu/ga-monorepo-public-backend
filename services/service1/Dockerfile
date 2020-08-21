@@ -3,5 +3,6 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 COPY . .
-RUN go build -o services/service1/main .
+RUN cd services/service1/
+RUN go build -o main .
 CMD ["/app/main"]

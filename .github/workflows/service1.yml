@@ -47,20 +47,23 @@ jobs:
     #         go tool cover -func cover.out | grep total
     #         go tool cover -html=cover.out -o cover.html
 
-    build_and_publish:
+    publish:
         runs-on: ubuntu-latest
         # needs: [lint, test]
         # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         steps:
         - name: checkout the repo
           uses: actions/checkout@v2
-        # - name : build and publish docker image for service1
+        
+        #docker build and push - manual
+        # - name : build and push docker image for service1
         #   run: |
         #     docker build -f services/service1/Dockerfile .
         #     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         #     docker tag service1 $REPO:service1-$tag_with_sha
         #     docker push $REPO
 
+        #docker build and push - using actions
         - name: build and push to docker hub
           uses: docker/build-push-action@v1
           with:
