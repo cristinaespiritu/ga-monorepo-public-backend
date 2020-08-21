@@ -54,14 +54,17 @@ jobs:
         steps:
         - name: checkout the repo
           uses: actions/checkout@v2
-        - name: determine pwd
-          uses: echo $pwd
-        # - name: change working directory to service1
-        #   run: cd services/service1
-        - name: build and push to docker hub
-          uses: docker/build-push-action@v1
-          with:
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
-            repository: cristinaespiritu/pocpublic
-            tag_with_sha: true
+        - name : build and publish docker image for service1
+          run: |
+            docker build -t service1 .
+            docker tag service1 $REPO:service1-$tag_with_sha
+            docker push $REPO
+            
+
+        # - name: build and push to docker hub
+        #   uses: docker/build-push-action@v1
+        #   with:
+        #     username: ${{ secrets.DOCKER_USERNAME }}
+        #     password: ${{ secrets.DOCKER_PASSWORD }}
+        #     repository: cristinaespiritu/pocpublic
+        #     tag_with_sha: true
