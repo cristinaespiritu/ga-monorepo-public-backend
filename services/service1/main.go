@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 // outyet is a web server that announces whether or not a particular Go version
-// has been tagged
+// has been tagged.
 package main
 
 import (
