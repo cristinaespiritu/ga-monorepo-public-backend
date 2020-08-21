@@ -58,7 +58,7 @@ jobs:
         #docker build and push - manual
         - name : build and push docker image for service1
           run: |
-            docker build -f services/service1/Dockerfile .
+            docker build -t service1 -f services/service1/Dockerfile .
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker tag service1 $REPO:service1-$tag_with_sha
             docker push $REPO
