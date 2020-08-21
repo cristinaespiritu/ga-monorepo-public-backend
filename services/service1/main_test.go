@@ -45,9 +45,9 @@ func TestIsTagged(t *testing.T) {
 	// Change fake server status to 200 OK and try again.
 	status = http.StatusOK
 
-	if !isTagged(s.URL) {
+	// if !isTagged(s.URL) {
 		t.Fatal("isTagged == false, want true")
-	}
+	// }
 }
 
 func TestIntegration(t *testing.T) {
