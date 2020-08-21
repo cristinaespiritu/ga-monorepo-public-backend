@@ -12,7 +12,7 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: build-service1
-          run: go build -i -v
+          run: go build -i -v services/service1/main.go
 
     # lint:
     #     runs-on: ubuntu-latest
