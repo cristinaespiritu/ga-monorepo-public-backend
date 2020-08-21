@@ -1,0 +1,29 @@
+name: monorepo-poc
+
+# on: [push]
+
+# jobs:
+
+#     build-service1:
+#         runs-on: ubuntu-18.04
+#         steps:
+#         - uses: actions/checkout@v2
+#         - name: build-service1
+#           run: go build -i -v services/service1/main.go
+    
+    # build-service2:
+    #     runs-on: ubuntu-18.04
+    #     steps:
+    #     - uses: actions/checkout@v2
+    #     - name: build-service2
+    #         run: go build -i -v services/service2/main.go
+
+    # build-service3:
+    #     runs-on: ubuntu-18.04
+    #     steps:
+    #     - uses: actions/checkout@v2
+    #     - name: build-service3
+    #         run: go build -i -v services/service3/main.go
+
+
+    
