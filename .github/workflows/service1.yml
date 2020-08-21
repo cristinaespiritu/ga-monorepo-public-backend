@@ -6,7 +6,7 @@ env:
 on:
     push:
         paths:
-            - 'services/service1/**'
+            - '$SERVICE_FOLDER/**'
 
 jobs:
 
@@ -60,7 +60,7 @@ jobs:
         - name: build and push to docker hub
           uses: docker/build-push-action@v1
           with:
-            path: services/service1
+            path: $SERVICE_FOLDER
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
             repository: cristinaespiritu/pocpublic
