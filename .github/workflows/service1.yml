@@ -55,20 +55,20 @@ jobs:
         - name: checkout the repo
           uses: actions/checkout@v2
         
-        #docker build and push - manual
-        - name : build and push docker image for service1
-          run: |
-            docker build -t service1 -f services/service1/Dockerfile .
-            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-            docker tag service1 $REPO/service1-$tag_with_sha
-            docker push $REPO
+        # #docker build and push - manual
+        # - name : build and push docker image for service1
+        #   run: |
+        #     docker build -t service1 -f services/service1/Dockerfile .
+        #     docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        #     docker tag service1 $REPO:$tag_with_sha
+        #     docker push $REPO
 
-        # #docker build and push - using actions
-        # - name: build and push to docker hub
-        #   uses: docker/build-push-action@v1
-        #   with:
-        #     path: ~/Dockerfile
-        #     username: ${{ secrets.DOCKER_USERNAME }}
-        #     password: ${{ secrets.DOCKER_PASSWORD }}
-        #     repository: cristinaespiritu/pocpublic
-        #     tag_with_sha: true
+        #docker build and push - using actions
+        - name: build and push to docker hub
+          uses: docker/build-push-action@v1
+          with:
+            path: services/service1/Dockerfile
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+            repository: cristinaespiritu/pocpublic
+            tag_with_sha: true
