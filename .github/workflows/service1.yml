@@ -1,8 +1,9 @@
 name: service1
 
-on: [push]
-    paths:
-        - 'services/service1/**'
+on:
+    push:
+        paths:
+            - 'services/service1/**'
 
 jobs:
 
