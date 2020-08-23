@@ -3,7 +3,12 @@ name: service2
 env:
   SERVICE_PATH: services/service2
 
+# on pull_request to trigger pipeline again in case of push of new commit to an open PR to trigger the jobs 
+# again if there was change from a previous commit in the PR
 on:
+    pull_request:
+        paths:
+            - 'services/service2/**'
     push:
         paths:
             - 'services/service2/**'
