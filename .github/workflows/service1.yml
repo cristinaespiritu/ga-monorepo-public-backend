@@ -5,8 +5,6 @@ env:
 
 on:
     push:
-        paths:
-            - 'services/service1/**'
     pull_request:
         paths:
             - 'services/service1/**'
