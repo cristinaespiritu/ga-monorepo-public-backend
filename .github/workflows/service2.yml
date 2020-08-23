@@ -7,6 +7,8 @@ env:
 # again if there was change from a previous commit in the PR
 on:
     pull_request:
+        paths:
+            - 'services/service2/**'
     push:
         paths:
             - 'services/service2/**'
