@@ -8,7 +8,7 @@ import (
 )
 
 func TestMain(t *testing.T) {
-	var a string = "Bonjour"
+	var a string = "Hello"
 	var b string = "Bonjour"
 
 	assert.Equal(t, a, b, "two words should be the same")
