@@ -9,7 +9,7 @@ import (
 
 func TestMain(t *testing.T) {
 	var a string = "Ahoj"
-	var b string = "Ahoj"
+	var b string = "mali"
 
 	assert.Equal(t, a, b, "two words should be the same")
 
