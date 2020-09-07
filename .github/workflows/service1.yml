@@ -20,7 +20,10 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: build
-          run: go build -i -v $SERVICE_PATH/main.go
+          run: |
+          echo ${GOPATH}
+          echo ${GOROOT}
+          go build -i -v $SERVICE_PATH/main.go
 
     lint:
         runs-on: ubuntu-latest
