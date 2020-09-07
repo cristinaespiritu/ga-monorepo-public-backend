@@ -21,9 +21,9 @@ jobs:
         - uses: actions/checkout@v2
         - name: build
           run: |
-          echo ${GOPATH}
-          echo ${GOROOT}
-          go build -i -v $SERVICE_PATH/main.go
+            echo ${GOPATH}
+            echo ${GOROOT}
+            go build -i -v $SERVICE_PATH/main.go
 
     lint:
         runs-on: ubuntu-latest
